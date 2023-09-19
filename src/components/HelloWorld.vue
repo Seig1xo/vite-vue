@@ -23,22 +23,8 @@ const count = ref(0)
   </div>
     
   <Button class="button-other" id="button-duplicate">Duplicate</Button>
-  <script> document.querySelector("#button-duplicate").addEventListener('click', (e) => {
-      let card = document.querySelector(".card");
-      let clonedCard = card.cloneNode(true);
-      clonedCard.id = 'clonedcard';
-      document.body.appendChild(clonedCard);
-    })
-  </script>
     
   <Button class="button-other" id="button-delete">Delete</Button>
-  <script> document.querySelector("#button-delete").addEventListener('click', (e) => {
-      let card = document.querySelector(".card");
-      let clonedCard = card.cloneNode(true);
-      clonedCard.id = 'clonedcard';
-      document.querySelector("#clonedcard").remove();
-    })
-  </script>
     
   <Button class="button-other" id="button-color" onClick="toggleBackground()">Toggle Background Color</Button>
   
