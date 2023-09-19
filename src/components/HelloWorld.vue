@@ -8,10 +8,9 @@ defineProps({
 const count = ref(0)
 </script>
 
-<div class="wrapper">
+<template class="wrapper">
 
   <div class="card" id="card">
-  
    <h1>super</h1>
     
    <img src="https://www.gamersdecide.com/sites/default/files/authors/u156421/super.jpg" alt="Card Image">
@@ -20,7 +19,7 @@ const count = ref(0)
       <summary>Description</summary>
       <p>Matthew "super" DeLisi is a retired American player who last played for San Francisco Shock. He is one of the most decorated competitive Overwatch players, being a two time Overwatch League Champion, World Cup Champion, Stage 2 Champion, May Melee Tournament Champion, Role Star, All Star and MVP Runner-Up.</p>
     </details>
-    
+
   </div>
     
   <Button class="button-other" id="button-duplicate">Duplicate</Button>
@@ -46,8 +45,8 @@ const count = ref(0)
   <Button class="button-other" id="button-heading" onClick="changeHeading()">Change Heading</Button>
     
   <Button class="button-other" id="button-description" onClick="toggleDescription()">Toggle Description</Button>
-    
-</div>   
+   
+</template>
 
 <style scoped>
 .read-the-docs {
