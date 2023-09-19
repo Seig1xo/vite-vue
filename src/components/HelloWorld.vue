@@ -8,30 +8,46 @@ defineProps({
 const count = ref(0)
 </script>
 
-<template>
-  <h1>{{ msg }}</h1>
+<div class="wrapper">
 
-  <div class="card">
-    <button type="button" @click="count++">count is {{ count }}</button>
-    <p>
-      Edit
-      <code>components/HelloWorld.vue</code> to test HMR
-    </p>
+  <div class="card" id="card">
+  
+   <h1>super</h1>
+    
+   <img src="https://www.gamersdecide.com/sites/default/files/authors/u156421/super.jpg" alt="Card Image">
+     
+    <details>
+      <summary>Description</summary>
+      <p>Matthew "super" DeLisi is a retired American player who last played for San Francisco Shock. He is one of the most decorated competitive Overwatch players, being a two time Overwatch League Champion, World Cup Champion, Stage 2 Champion, May Melee Tournament Champion, Role Star, All Star and MVP Runner-Up.</p>
+    </details>
+    
   </div>
-
-  <p>
-    Check out
-    <a href="https://vuejs.org/guide/quick-start.html#local" target="_blank"
-      >create-vue</a
-    >, the official Vue + Vite starter
-  </p>
-  <p>
-    Install
-    <a href="https://github.com/johnsoncodehk/volar" target="_blank">Volar</a>
-    in your IDE for a better DX
-  </p>
-  <p class="read-the-docs">Click on the Vite and Vue logos to learn more</p>
-</template>
+    
+  <Button class="button-other" id="button-duplicate">Duplicate</Button>
+  <script> document.querySelector("#button-duplicate").addEventListener('click', (e) => {
+      let card = document.querySelector(".card");
+      let clonedCard = card.cloneNode(true);
+      clonedCard.id = 'clonedcard';
+      document.body.appendChild(clonedCard);
+    })
+  </script>
+    
+  <Button class="button-other" id="button-delete">Delete</Button>
+  <script> document.querySelector("#button-delete").addEventListener('click', (e) => {
+      let card = document.querySelector(".card");
+      let clonedCard = card.cloneNode(true);
+      clonedCard.id = 'clonedcard';
+      document.querySelector("#clonedcard").remove();
+    })
+  </script>
+    
+  <Button class="button-other" id="button-color" onClick="toggleBackground()">Toggle Background Color</Button>
+  
+  <Button class="button-other" id="button-heading" onClick="changeHeading()">Change Heading</Button>
+    
+  <Button class="button-other" id="button-description" onClick="toggleDescription()">Toggle Description</Button>
+    
+</div>   
 
 <style scoped>
 .read-the-docs {
