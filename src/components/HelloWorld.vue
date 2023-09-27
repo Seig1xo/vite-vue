@@ -6,6 +6,45 @@ defineProps({
 })
 
 const count = ref(0)
+
+function duplicateCard() {
+  let card = document.querySelector(".card");
+  let clonedCard = card.cloneNode(true);
+  clonedCard.id = 'clonedcard';
+  document.body.appendChild(clonedCard);
+}
+
+function deleteCard() {
+  let card = document.querySelector(".card");
+  let clonedCard = card.cloneNode(true);
+  clonedCard.id = 'clonedcard';
+  document.body.querySelector("#clonedcard").remove();
+}
+
+function toggleBackground() {
+  let c = document.querySelector("#card");
+  c.className = 'toggled' == c.className ? '' : 'toggled';
+}
+
+function changeHeading() {
+  let h = document.querySelector("h1");
+  if (h.innerHTML == "MTD") {
+    h.innerHTML = "super";
+  }
+  else {
+    h.innerHTML = "MTD";
+  }
+}
+
+function toggleDescription() {
+  const details = document.querySelector('summary');
+  if (details.parentNode.getAttribute('open')) {
+    details.parentNode.removeAttribute('open');
+  }
+  else {
+    details.parentNode.setAttribute('open','open');   
+  }
+}
 </script>
 
 <template class="wrapper">
@@ -22,15 +61,15 @@ const count = ref(0)
 
   </div>
     
-  <Button class="button-other" id="button-duplicate">Duplicate</Button>
+  <Button class="button-other" id="button-duplicate" @click="duplicateCard">Duplicate</Button>
     
-  <Button class="button-other" id="button-delete">Delete</Button>
+  <Button class="button-other" id="button-delete" @onClick="deleteCard">Delete</Button>
     
-  <Button class="button-other" id="button-color" onClick="toggleBackground()">Toggle Background Color</Button>
+  <Button class="button-other" id="button-color" @onClick="toggleBackground">Toggle Background Color</Button>
   
-  <Button class="button-other" id="button-heading" onClick="changeHeading()">Change Heading</Button>
+  <Button class="button-other" id="button-heading" @onClick="changeHeading">Change Heading</Button>
     
-  <Button class="button-other" id="button-description" onClick="toggleDescription()">Toggle Description</Button>
+  <Button class="button-other" id="button-description" @onClick="toggleDescription">Toggle Description</Button>
    
 </template>
 
