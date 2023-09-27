@@ -63,13 +63,13 @@ function toggleDescription() {
     
   <Button class="button-other" id="button-duplicate" @click="duplicateCard">Duplicate</Button>
     
-  <Button class="button-other" id="button-delete" @onClick="deleteCard">Delete</Button>
+  <Button class="button-other" id="button-delete" @click="deleteCard">Delete</Button>
     
-  <Button class="button-other" id="button-color" @onClick="toggleBackground">Toggle Background Color</Button>
+  <Button class="button-other" id="button-color" @click="toggleBackground">Toggle Background Color</Button>
   
-  <Button class="button-other" id="button-heading" @onClick="changeHeading">Change Heading</Button>
+  <Button class="button-other" id="button-heading" @click="changeHeading">Change Heading</Button>
     
-  <Button class="button-other" id="button-description" @onClick="toggleDescription">Toggle Description</Button>
+  <Button class="button-other" id="button-description" @click="toggleDescription">Toggle Description</Button>
    
 </template>
 
